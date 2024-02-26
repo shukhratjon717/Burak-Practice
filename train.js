@@ -16,6 +16,3 @@ function counter(finder) {
 
 counter([53,2,2,21]);
 
-// if(typeof finder == 'number' ) {
-//     console.log(finder.charAt(finder.length - 1))
-// }

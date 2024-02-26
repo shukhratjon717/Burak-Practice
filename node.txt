@@ -1,0 +1,7 @@
+Architectural Pattern: Backend: MVC(Model View Controler), DI( Depedency Injection), Frontend:
+MVP (Model View Presenter),
+
+Design Pattern: Middleware, decoratar.
+
+// Enviromental variable : Shunday malumotlar borki ularni githubga push qilib bo'lmaydi 
+for ex: database link.

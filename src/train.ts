@@ -11,3 +11,17 @@ function collection(nums:any) {
     
 }
    collection([-1, 4, -6, 7, 66])
+
+
+
+   /* Project Standards
+    1- Logging Standards
+    2- Naming Standards (
+        camel case: function methods varible names      goHome
+        pascal case: class,                             MemberService
+        kebab case: folders
+        snake case: css)
+    3- Error Handling
+    4- 
+   
+   */

@@ -19,7 +19,7 @@ function collection(nums:any) {
     2- Naming Standards (
         camel case: function methods varible names      goHome
         pascal case: class,                             MemberService
-        kebab case: folders
+        kebab case: folders, file
         snake case: css)
     3- Error Handling
     4- 

@@ -17,11 +17,11 @@ function collection(nums:any) {
    /* Project Standards
     1- Logging Standards
     2- Naming Standards (
-        camel case: function methods varible names      goHome
+        camel case: function, methods, varible names      goHome
         pascal case: class,                             MemberService
         kebab case: folders, file
-        snake case: css)
+        snake case: css
     3- Error Handling
-    4- 
+    4- TRY(). CATCH()
    
    */

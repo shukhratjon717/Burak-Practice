@@ -32,7 +32,8 @@ class MemberService {
     
             return result;
         }
-        catch(err) {
+        catch (err) {  
+            // customized errorlarni frontEnd uchun berish
             throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
 
         }
@@ -41,13 +42,13 @@ class MemberService {
         public async processLogin(input: LoginInput): Promise<Member> {
             const member = await this.memberModel
                 .findOne(
-                    { memberNick: input.memberNick },
-                    { memberNick: 1, memberPassword: 1}
+                    { memberNick: input.memberNick }, // search
+                    { memberNick: 1, memberPassword: 1}  // option
                 )
                 .exec();
                if(!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK)
                
-            const isMatch = await bcrypt.compare(
+            const isMatch: boolean = await bcrypt.compare(
                 input.memberPassword,
                 member.memberPassword
             );

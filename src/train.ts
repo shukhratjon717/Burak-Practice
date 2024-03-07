@@ -1,27 +1,13 @@
-function collection(nums:any) {
-    let posNums = [];
-  for(let i = 0; i < nums.length; i++) {
-    if (nums[i] > 0) {
-      posNums.push(nums[i]);
-     const result = posNums.join("")
-     return result
-    }
-   
-  }
-    
+interface GetDigits {
+  str: string;
+  nums: string;
 }
-   collection([-1, 4, -6, 7, 66])
 
+function findNums(str: string): GetDigits{
+  const step1 = str.match(/\d/g);
+  const step2 = step1 ? step1.join("") : "";
+  return {str: "final output", nums: step2}
+}
 
-
-   /* Project Standards
-    1- Logging Standards
-    2- Naming Standards (
-        camel case: function, methods, varible names      goHome
-        pascal case: class,                             MemberService
-        kebab case: folders, file
-        snake case: css
-    3- Error Handling
-    4- TRY(). CATCH()
-   
-   */
+const result = findNums("hello3323wo7r1l7d")
+console.log(result.str, result.nums)

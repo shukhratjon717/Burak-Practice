@@ -1,13 +1,14 @@
 import {Request, Response} from "express";
 import {T} from "../libs/types/common";
-import MemberService from "../models/Member.servie"
-import { LoginInput, MemberInput } from "../libs/types/member";
+import MemberService from "../models/Member.service"
+import { LoginInput, MemberInput, } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
 
 const memberService = new MemberService();
 
 const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
+    // TODO:
     try {
         console.log("goHome")
         res.render("home");

@@ -15,6 +15,6 @@ console.log(result.str, result.nums)
 
 
 /* 
-Traditional FrontEnd Development (FD) => BSSR (Admin) => EJS
+Traditional FrontEnd Development (FD) => BSSR = SSR (Admin) => EJS
 Modern FrontEnd development (FD)      => SPA( Single Page Application) (USER's appications) => REACT
 */

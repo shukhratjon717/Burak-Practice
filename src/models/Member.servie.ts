@@ -32,7 +32,7 @@ class MemberService {
     }
 
     public async login(input: LoginInput): Promise<Member> {
-            // TODO Consider member status later
+            // TODO: Consider member status later
             const member = await this.memberModel
                 .findOne(
                     { memberNick: input.memberNick }, // search
@@ -45,15 +45,12 @@ class MemberService {
                 input.memberPassword,
                 member.memberPassword
             );
-                    
             // const isMatch = input.memberPassword == member.memberPassword;
-
             if (!isMatch){
                throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
             }
 
-            return await this.memberModel.findById(member._id).lean().exec();
-    
+            return await this.memberModel.findById(member._id).lean().exec(); 
     }
 
 

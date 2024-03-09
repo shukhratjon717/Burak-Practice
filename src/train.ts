@@ -11,3 +11,10 @@ function findNums(str: string): GetDigits{
 
 const result = findNums("hello3323wo7r1l7d")
 console.log(result.str, result.nums)
+
+
+
+/* 
+Traditional FrontEnd Development (FD) => BSSR (Admin) => EJS
+Modern FrontEnd development (FD)      => SPA( Single Page Application) (USER's appications) => REACT
+*/

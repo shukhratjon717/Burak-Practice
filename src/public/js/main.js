@@ -1,2 +1,2 @@
-console.log("FRONTEND JAVASCRIPT STARTS");
 
+console.log("FRONTEND JAVASCRIPT STARTS");

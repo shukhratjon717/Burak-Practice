@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
 
 import {T} from "../libs/types/common";
-import MemberService from "../models/Member.servie";
+import MemberService from "../models/Member.service";
 import {  LoginInput, Member, MemberInput } from "../libs/types/member";
 import Errors from "../libs/Error";
 import moment from "moment";
@@ -20,7 +20,7 @@ memberController.signup = async (req: Request, res: Response) => {
             result: Member = await memberService.signup(input);
         // TODO: TOKENS AUTHENTICATION
         
-        console.log(`${input.memberNick} is registered as new user ${moment().format("YYYY-MM-DD HH:MM:ss")}`)
+        console.log(`${input.memberNick} is registered as new user at${moment().format("YYYY-MM-DD HH:MM:ss")}`)
         res.json({ member: result });
     } catch (err) {
         console.log("Error, signup:", err)

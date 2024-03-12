@@ -1,24 +1,21 @@
 
-interface findbiggest {
-  str: string;
 
+interface findVowel {
+  num: number;
+}
+function getVowels(str : string): findVowel {
+  let vowelNums = 0;
+  let vowels = ["a", "e", "i", "o", "u"];
+  for (let char of str) {
+   if(vowels.includes(char) ) {
+     vowelNums++
+   }
+  }
+ return {num: vowelNums }
 }
 
-function findLongest(str: string): findbiggest{
-  
-    let step1 = str.split(" ");
-    let longest = 0;
-    let result = '';
-    for(let i = 0; i < step1.length; i++) {
-      if(longest < step1[i].length) {
-        longest = step1[i].length;
-        result = step1[i]
-      }
-    }
-    return {"str": result}
-  };
-  
-  console.log(findLongest("Hello world by Steven"))
+console.log(getVowels("hello woarld"))
+
 
 
 /* 

@@ -6,6 +6,9 @@ import * as bcrypt from "bcryptjs";
 
 
 class MemberService {
+    static signup(input: MemberInput): Member | PromiseLike<Member> {
+        throw new Error("Method not implemented.");
+    }
      private readonly memberModel;
 
     constructor() {

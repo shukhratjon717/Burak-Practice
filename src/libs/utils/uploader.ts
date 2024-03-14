@@ -22,6 +22,7 @@ const makeUploader = (address: string) => {
 };
 
 export default makeUploader;
+
 // const product_storage = multer.diskStorage({
 //   destination: function (req, file, cb) {
 //     cb(null, "./uploads/products");

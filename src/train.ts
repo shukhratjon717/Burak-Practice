@@ -1,18 +1,14 @@
-interface findVowel {
-  num: number;
+interface reverser {
+  str: string,
+} 
+function getReverse(str: string): reverser {
+  const step1 = str.split("");
+  const step2 = step1.reverse();
+  const step3 = step2.join("")
+  return {str: step3}
 }
-function getVowels(str: string): findVowel {
-  let vowelNums = 0;
-  let vowels = ["a", "e", "i", "o", "u"];
-  for (let char of str) {
-    if (vowels.includes(char)) {
-      vowelNums++;
-    }
-  }
-  return { num: vowelNums };
-}
+console.log(getReverse("hello world by Steve"))
 
-console.log(getVowels("hello woarld"));
 
 /* 
 Traditional FrontEnd Development (FD) => BSSR = SSR (Admin) => EJS

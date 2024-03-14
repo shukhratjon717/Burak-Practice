@@ -48,7 +48,7 @@ restaurantController.processSignup = async (
     if(!file) throw new Errors(HttpCode.BAD_REQUEST, Message.SOEMTHING_WENT_WRONG)
 
     const newMember: MemberInput = req.body;
-    newMember.memberImage = file?.path;
+    newMember.memberImage = file?.path.replace(/\\/g, "/");   // Windows uchun teskari pathni tog'rilab beradi;
     newMember.memberType = MemberType.RESTAURANT;
     const result = await memberService.processSignup(newMember);
     //TODO: SESSIONS AUTHENTICATON
@@ -62,7 +62,7 @@ restaurantController.processSignup = async (
     const messsage =
       err instanceof Errors ? err.message : Message.SOEMTHING_WENT_WRONG;
     res.send(
-      `<script> alert("${messsage}) window.location.replace("admin/login") </script>`
+      `<script> alert("${messsage}); window.location.replace("admin/login") </script>`
     );
   }
 };
@@ -87,7 +87,7 @@ restaurantController.processLogin = async (
     const messsage =
       err instanceof Errors ? err.message : Message.SOEMTHING_WENT_WRONG;
     res.send(
-      `<script> alert("${messsage}) window.location.replace("admin/login") </script>`
+      `<script> alert("${messsage}); window.location.replace("admin/login") </script>`
     );
   }
 };

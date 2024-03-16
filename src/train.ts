@@ -1,13 +1,24 @@
-interface reverser {
-  str: string,
-} 
-function getReverse(str: string): reverser {
-  const step1 = str.split("");
-  const step2 = step1.reverse();
-  const step3 = step2.join("")
-  return {str: step3}
+interface SquareMaker {
+  Number: number;
+  Square: number;
 }
-console.log(getReverse("hello world by Steve"))
+
+function getSquare(arr: number[]): SquareMaker[] {
+  let result: SquareMaker[] = [];
+  for (let i = 0; i < arr.length; i++) {
+    const step2 = arr[i] * arr[i];
+    const step3: SquareMaker = {
+      Number: arr[i],
+      Square: step2
+    };
+    result.push(step3);
+  }
+  return result;
+}
+
+const squares = getSquare([1, 2, 3]);
+console.log(squares);
+
 
 
 /* 

@@ -45,15 +45,19 @@ restaurantController.processSignup = async (
   try {
     console.log("processSignup");
     const file = req.file;
-    if(!file) throw new Errors(HttpCode.BAD_REQUEST, Message.SOEMTHING_WENT_WRONG)
+
+    if (!file)
+      throw new Errors(HttpCode.BAD_REQUEST, Message.SOEMTHING_WENT_WRONG);
 
     const newMember: MemberInput = req.body;
-    newMember.memberImage = file?.path.replace(/\\/g, "/");   // Windows uchun teskari pathni tog'rilab beradi;
+    newMember.memberImage = file?.path.replace(/\\/g, "/"); // Windows uchun teskari pathni tog'rilab beradi;
+    // rasm qayerga saqlanishini korsatatdi
     newMember.memberType = MemberType.RESTAURANT;
     const result = await memberService.processSignup(newMember);
     //TODO: SESSIONS AUTHENTICATON
 
     req.session.member = result;
+    // Agar mantiq to'g'ri bajarilsa, bizni produxts pagega yubor
     req.session.save(function () {
       res.redirect("/admin/product/all");
     });
@@ -100,6 +104,28 @@ restaurantController.logout = async (req: AdminRequest, res: Response) => {
     });
   } catch (err) {
     console.log("Error, getLogin:", err);
+    res.redirect("/admin");
+  }
+};
+
+restaurantController.getUsers = async (req: Request, res: Response) => {
+  try {
+    console.log("getUsers");
+    const result = await memberService.getUsers();
+    console.log("result:", result);
+
+    res.render("users", { users: result });
+  } catch (err) {
+    console.log("Error, getUsers:", err);
+    res.redirect("/admin/login");
+  }
+};
+
+restaurantController.updateChosenUser = (req: Request, res: Response) => {
+  try {
+    console.log("updateChosenUser");
+  } catch (err) {
+    console.log("Error, updateChosenUser:", err);
     res.redirect("/admin");
   }
 };

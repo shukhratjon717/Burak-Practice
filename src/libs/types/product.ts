@@ -30,13 +30,13 @@ export interface ProductInput {
   productDesc?: string;
   productImages?: string[];
   productViews?: number;
-};
+}
 
 export interface ProductUpdateInput {
   _id: ObjectId;
   productStatus?: ProductStatus;
   productCollection?: ProductCollection;
-  productName: string;
+  productName?: string;
   productPrice?: number;
   productLeftCount?: number;
   productSize?: ProductSize;
@@ -45,4 +45,3 @@ export interface ProductUpdateInput {
   productImages?: string[];
   productViews?: number;
 }
-

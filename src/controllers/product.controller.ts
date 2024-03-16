@@ -33,12 +33,14 @@ productController.createNewProduct = async (
   try {
     console.log("createNewProduct");
     if (!req.files?.length)
-      throw new Errors(HttpCode.INTERNAL_SERVER_ERROR, Message.CREATE_FAILED);
+    throw new Errors(HttpCode.INTERNAL_SERVER_ERROR, Message.CREATE_FAILED);
 
     const data: ProductInput = req.body;
     data.productImages = req.files?.map((ele) => {
+      // ele harbir productni maumotini alihida alohida  ko'rsatadi
       return ele.path; // Windows uchun teskari pathni tog'rilab beradi
     });
+
 
     await productService.createNewProduct(data);
     res.send(
@@ -68,5 +70,8 @@ productController.updateChosenProduct = async (req: Request, res: Response) => {
     else res.status(Errors.standard.code).json(Errors.standard);
   }
 };
+
+  /*  SSR Finisher*/
+
 
 export default productController;

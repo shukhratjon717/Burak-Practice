@@ -38,7 +38,7 @@ productController.createNewProduct = async (
     const data: ProductInput = req.body;
     data.productImages = req.files?.map((ele) => {
       // ele harbir productni maumotini alihida alohida  ko'rsatadi
-      return ele.path; // Windows uchun teskari pathni tog'rilab beradi
+      return ele.path.replace(/\\/g, "/"); // Windows uchun teskari pathni tog'rilab beradi
     });
 
 

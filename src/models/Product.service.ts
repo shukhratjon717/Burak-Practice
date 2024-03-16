@@ -29,6 +29,7 @@ class ProductService {
   };
 
   public async createNewProduct(input: ProductInput): Promise<Product> {
+    // try().catch() => mongoDB errorlarni o'rniga o'zimizni customized errorlarni beradi
     try {
       return await this.productModel.create(input);
     } catch (err) {

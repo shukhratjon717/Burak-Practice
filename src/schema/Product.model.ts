@@ -60,8 +60,8 @@ const productSchema = new Schema(
   { timestamps: true } // UpdatedAt, createdAt
 );
 
-// productSchema.index(
-//   { productName: 1, ProductSize: 1, ProductVolume: 1 },
-//   { unique: false }
-// );
+productSchema.index(
+  { productName: 1, ProductSize: 1, ProductVolume: 1 },
+  { unique: true }
+);
 export default mongoose.model("Product", productSchema);
